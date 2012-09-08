@@ -1,0 +1,338 @@
+<html>
+<head>
+<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
+<!-- above set at the top of the file will set     -->
+<!-- the browser's rendering engine into           -->
+<!-- "Quirks Mode". Replacing this declaration     -->
+<!-- with a "Standards Mode" doctype is supported, -->
+<!-- but may lead to some differences in layout.   -->
+
+
+
+<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+<!--                                           -->
+<!-- Any title is fine                         -->
+<!--                                           -->
+<title>TwitterBowl2009</title>
+
+<!--                                           -->
+<!-- This script loads your compiled module.   -->
+<!-- If you add any GWT meta tags, they must   -->
+<!-- be added before this line.                -->
+<!--                                           -->
+<!--                                           -->
+<!-- The body can have arbitrary html, or      -->
+<!-- you can leave the body empty if you want  -->
+<!-- to create a completely dynamic UI.        -->
+
+<link rel="stylesheet"
+	href="http://localhost:8888/com.twitterbowl2009.TwitterBowl2009/gwt/standard/standard.css" />
+<link rel="stylesheet"
+	href="http://localhost:8888/com.twitterbowl2009.TwitterBowl2009/TwitterBowl2009.css" />
+	
+<style charset="utf-8" type="text/css">
+/* See license.txt for terms of usage */
+.firebugHighlight {
+	z-index: 2147483647;
+	position: absolute;
+/*	background-color: #3875d7; */
+}
+
+.firebugLayoutBoxParent {
+	z-index: 2147483647;
+	position: absolute;
+	background-color: transparent;
+	border-right: 1px dashed #BBBBBB;
+	border-bottom: 1px dashed #BBBBBB;
+}
+
+.firebugRulerH {
+	position: absolute;
+	top: -15px;
+	left: 0;
+	width: 100%;
+	height: 14px;
+/*	background: url(chrome://firebug/skin/rulerH.png) repeat-x; */
+	border-top: 1px solid #BBBBBB;
+	border-right: 1px dashed #BBBBBB;
+	border-bottom: 1px solid #000000;
+}
+
+.firebugRulerV {
+	position: absolute;
+	top: 0;
+	left: -15px;
+	width: 14px;
+	height: 100%;
+/*	background: url(chrome://firebug/skin/rulerV.png) repeat-y; */
+	border-left: 1px solid #BBBBBB;
+	border-right: 1px solid #000000;
+	border-bottom: 1px dashed #BBBBBB;
+}
+
+.overflowRulerX>.firebugRulerV {
+	left: 0;
+}
+
+.overflowRulerY>.firebugRulerH {
+	top: 0;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.firebugLayoutBoxOffset {
+	z-index: 2147483647;
+	position: absolute;
+	opacity: 0.8;
+}
+
+.firebugLayoutBoxMargin {
+/*	background-color: #EDFF64; */
+}
+
+.firebugLayoutBoxBorder {
+/*	background-color: #666666; */
+}
+
+.firebugLayoutBoxPadding {
+/*	background-color: SlateBlue; */
+}
+
+.firebugLayoutBoxContent {
+/*	background-color: SkyBlue; */
+}
+
+/*.firebugHighlightGroup .firebugLayoutBox {
+    background-color: transparent;
+}
+
+.firebugHighlightBox {
+    background-color: Blue !important;
+}*/
+.firebugLayoutLine {
+	z-index: 2147483647;
+/*	background-color: #000000; */
+	opacity: 0.4;
+}
+
+.firebugLayoutLineLeft,.firebugLayoutLineRight {
+	position: fixed;
+	width: 1px;
+	height: 100%;
+}
+
+.firebugLayoutLineTop,.firebugLayoutLineBottom {
+	position: absolute;
+	width: 100%;
+	height: 1px;
+}
+
+.firebugLayoutLineTop {
+	margin-top: -1px;
+	border-top: 1px solid #999999;
+}
+
+.firebugLayoutLineRight {
+	border-right: 1px solid #999999;
+}
+
+.firebugLayoutLineBottom {
+	border-bottom: 1px solid #999999;
+}
+
+.firebugLayoutLineLeft {
+	margin-left: -1px;
+	border-left: 1px solid #999999;
+}
+</style>
+</head>
+<body style="background: #fff url(gwt/standard/images/background.png) repeat-x">
+
+<!-- OPTIONAL: include this if you want history support -->
+<table cellspacing="0" cellpadding="0" border="0" style="width: 100%;">
+	<tbody>
+		<tr>
+			<td align="center" style="vertical-align: top;"><img
+				src="http://twitterbowl2009.com/design-impl/images/banner.png"
+				class="gwt-Image" /></td>
+		</tr>
+		<tr>
+			<td align="center" style="vertical-align: top;">
+			<table cellspacing="0" cellpadding="0" border="0"
+				style="width: 100%;">
+				<tbody>
+					<tr>
+						<td align="left" style="vertical-align: top;">
+						<div class="gwt-HTML">
+						<script language="javascript">
+							/* widget config */
+							var jtw_divname                = 'steelers';  /* unique id of the widget */
+							var jtw_search                 = 'steelers';  /* keywords or phrase to send to search.twitter.com and display */
+							var jtw_width                  = '90%';  /* width of widget in px, %, or auto */
+							var jtw_height                 = '480px';  /* height of widget in px, %, or auto */
+							var jtw_scroll                 = '';  /* add scroll bar to widget, 'yes' or 'no' */
+							var jtw_widget_background      = '#1C4D6B';  /* background style of whole widget */
+							var jtw_widget_border          = '';  /* border style of whole widget */
+							var jtw_center_widget          = '';  /* center widget horizontally in container if 'yes' */
+							
+							/* tweet styling */
+							var jtw_tweet_textcolor        = '';  /* text color of the tweets */
+							var jtw_tweet_linkcolor        = '';  /* link color of the tweets */
+							var jtw_tweet_background       = 'transparent';  /* background style of the tweets */
+							var jtw_tweet_newbackground    = '';  /* background style of new tweets */
+							var jtw_tweet_border           = '';  /* border style of the tweets */
+							var jtw_tweet_margin           = '';  /* marin in px for each tweet */
+							var jtw_tweet_fontsize         = '';  /* fontsize in px or em of each tweet */
+							var jtw_big_img                = '';  /* display big avatar instead of small avatar */
+							var jtw_hide_img               = '';  /* do not display twitter avatar if 'yes' */
+							
+							/* display config */
+							var jtw_pre_html               = '';  /* html code to display at the top of widget */
+							var jtw_post_html              = '';  /* html code to display at the bottom of widget */
+							var jtw_mid_html               = '';  /* html code to display inbetween each tweet */
+							var jtw_widget_style_misc      = '';  /* misc css style for the widget */
+							var jtw_results_style_misc     = '';  /* misc css style for the results */
+							var jtw_tweet_style_misc       = '';  /* misc css style for each tweet */
+							var jtw_num_tweets             = '';  /* number of tweets to display in widget (up to 100) */
+							var jtw_tweet_lang             = '';  /* language of tweets to display (2 letter country code) */
+							var jtw_widget_refresh_interval= '';  /* the frequency (in seconds) to look for new tweets*/
+						</script>
+						<script src="http://tweetgrid.com/widget/widget.js" type="text/javascript"></script>
+						</div>
+						</td>
+						<td width="300" align="left" style="vertical-align: top;">
+						<table cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr>
+									<td align="center" style="vertical-align: top;">
+									<div class="gwt-HTML"><object width="300" height="250"
+										id="W47606bd521007408497960eddddba1ac"
+										data="http://widgets.clearspring.com/o/47606bd521007408/497960eddddba1ac/47606bd521007408/ee3f4ce7/-cpid/f1d7d55e939d5b88"
+										type="application/x-shockwave-flash">
+										<param
+											value="http://widgets.clearspring.com/o/47606bd521007408/497960eddddba1ac/47606bd521007408/ee3f4ce7/-cpid/f1d7d55e939d5b88"
+											name="movie" />
+										<param value="transparent" name="wmode" />
+										<param value="all" name="allowNetworking" />
+										<param value="always" name="allowScriptAccess" />
+									</object></div>
+									</td>
+								</tr>
+								<tr>
+									<td align="left" style="vertical-align: top; margin-top: 1em;">
+									<table width="300px">
+										<colgroup>
+											<col />
+										</colgroup>
+										<tbody>
+											<tr>
+												<td>username</td>
+												<td><input type="text" tabindex="0" class="gwt-TextBox" /></td>
+											</tr>
+											<tr>
+												<td>password</td>
+												<td><input type="text" tabindex="0" class="gwt-TextBox" /></td>
+											</tr>
+											<tr>
+												<td>
+												<p>message:</p>
+												<textarea></textarea></td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+						<td align="right" style="vertical-align: top;">
+						<div class="gwt-HTML">
+						<script language="javascript">
+							/* widget config */
+							var jtw_divname                = 'cardinals';  /* unique id of the widget */
+							var jtw_search                 = 'cardinals';  /* keywords or phrase to send to search.twitter.com and display */
+							var jtw_width                  = '90%';  /* width of widget in px, %, or auto */
+							var jtw_height                 = '480px';  /* height of widget in px, %, or auto */
+							var jtw_scroll                 = '';  /* add scroll bar to widget, 'yes' or 'no' */
+							var jtw_widget_background      = '#1C4D6B';  /* background style of whole widget */
+							var jtw_widget_border          = '';  /* border style of whole widget */
+							var jtw_center_widget          = '';  /* center widget horizontally in container if 'yes' */
+							
+							/* tweet styling */
+							var jtw_tweet_textcolor        = '';  /* text color of the tweets */
+							var jtw_tweet_linkcolor        = '';  /* link color of the tweets */
+							var jtw_tweet_background       = 'transparent';  /* background style of the tweets */
+							var jtw_tweet_newbackground    = '';  /* background style of new tweets */
+							var jtw_tweet_border           = '';  /* border style of the tweets */
+							var jtw_tweet_margin           = '';  /* marin in px for each tweet */
+							var jtw_tweet_fontsize         = '';  /* fontsize in px or em of each tweet */
+							var jtw_big_img                = '';  /* display big avatar instead of small avatar */
+							var jtw_hide_img               = '';  /* do not display twitter avatar if 'yes' */
+							
+							/* display config */
+							var jtw_pre_html               = '';  /* html code to display at the top of widget */
+							var jtw_post_html              = '';  /* html code to display at the bottom of widget */
+							var jtw_mid_html               = '';  /* html code to display inbetween each tweet */
+							var jtw_widget_style_misc      = '';  /* misc css style for the widget */
+							var jtw_results_style_misc     = '';  /* misc css style for the results */
+							var jtw_tweet_style_misc       = '';  /* misc css style for each tweet */
+							var jtw_num_tweets             = '';  /* number of tweets to display in widget (up to 100) */
+							var jtw_tweet_lang             = '';  /* language of tweets to display (2 letter country code) */
+							var jtw_widget_refresh_interval= '';  /* the frequency (in seconds) to look for new tweets*/
+						</script>
+						<script src="http://tweetgrid.com/widget/widget.js" type="text/javascript"></script>
+						</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td align="center" style="vertical-align: top;">
+			<table cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+						<td align="left" style="vertical-align: top;">
+						<div class="ad-placeholder">ad placeholder</div>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" style="vertical-align: top;">
+						<table cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr>
+									<td align="left" style="vertical-align: top;">
+									<div class="gwt-HTML">about</div>
+									</td>
+									<td align="left" style="vertical-align: top;">
+									<div class="gwt-HTML">privacy policy</div>
+									</td>
+									<td align="left" style="vertical-align: top;">
+									<div class="gwt-HTML">terms of use</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td align="left" style="vertical-align: top;">
+						<table cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr>
+									<td align="left" style="vertical-align: top;">
+									<div class="gwt-HTML">copyright © 2009 twitterbowl</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

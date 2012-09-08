@@ -1,0 +1,9 @@
+/** Add css rules here for your application. */
+
+body {
+	background-color:#0f0;
+	background-image:url(gwt/standard/images/background.png);
+	background-repeat:repeat-x;
+}
+		
+	

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Twitter Bowl 2009 :: Commentary on the big game, Twitter style!</title>
+	<meta http-equiv="content-type" 
+		content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+
+<style>
+#widget, #W47606bd521007408497960eddddba1ac { border: 1px solid #000; float: left; background-color: #000; }
+#steelers  { float: left; margin-left: 0px }
+#cardinals { float: right; margin-right: 0px}
+#steelers,
+#cardinals {
+  display: inline;
+  border: 1px solid #000;
+}
+
+.superbowl-banner { 
+  text-align: center;
+  font-size: 24px;
+  float: center;
+  display: block;
+  color: #fff;
+  font-family: impact;
+  font-weight: bold;
+}
+
+.superbowl-banner,
+.superbowl-banner img {
+  margin-bottom: 0;
+}
+
+b { 
+  display: none; 
+  font-family: Arial;
+}
+
+body {
+  background-color: #fff;
+  background-image: url(images/background.png);
+  background-repeat: repeat-x;
+}
+
+#footer { 
+  color: #144d6f;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+#footer a:link {
+  color: #269ae1;
+}
+textarea {
+  border: 2px;
+}
+a:link, a:visited { color: #000; text-decoration: none; }
+a:hover           { color: #222; }
+</style>
+<script language="javascript" src="./prototype.js"></script>
+<script language="javascript">
+    function handleSuccess()
+    {
+        $('twitter-status').value = '#superbowl '; 
+        alert('Update posted, watch for it in the live stream!');
+    }
+
+    function updateTwitter()
+    {
+        $('twitter-username').parentNode.style.display = "none";
+        $('twitter-password').parentNode.style.display = "none";
+        //alert("status="+$('twitter-status').value+"&username="+$('twitter-username').value+"&password="+$('twitter-password').value);
+        //alert("status="+$('twitter-status').value+"&username="+$('twitter-username').value+"&password="+$('twitter-password').value);
+        return new Ajax.Request("/twitterpost.php",
+        {
+            method: 'GET',
+            parameters: "status="+encodeURIComponent($('twitter-status').value)
+                       +"&username="+encodeURIComponent($('twitter-username').value)
+                       +"&password="+encodeURIComponent($('twitter-password').value),
+            onsuccess: handleSuccess(),
+        });
+    }
+
+</script>
+
+</head>
+
+<body style="margin-top: 0px;">
+
+<!-- HEADER -->
+<div style="margin-top: 0px;">
+<span class="superbowl-banner" style="width: 491px; margin-left: auto; margin-right: auto; margin-top: 0px"><img src="images/banner.png" style="margin-top: 0px;" /></span>
+
+    <span style="font-weight: bold; font-size: 18px; color: #fff; float: left; width: 33%; text-align: center;">Pittsburgh Steelers</span>    
+    <span style="font-weight: bold; font-size: 18px; color: #fff; float: right; width: 33%; text-align: center;">Arizona Cardinals</span>    
+</div>
+
+<div id="tweets">
+<script language="javascript">
+	/* widget config */
+	var jtw_divname                = 'steelers';  /* unique id of the widget */
+	var jtw_search                 = 'steelers OR pittsburgh OR tomlin OR roethlisberger OR polamalu OR hines OR superbowl';  /* keywords or phrase to send to search.twitter.com and display */
+	var jtw_width                  = '33%';  /* width of widget in px, %, or auto */
+	var jtw_height                 = '480px';  /* height of widget in px, %, or auto */
+	var jtw_scroll                 = '';  /* add scroll bar to widget, 'yes' or 'no' */
+	var jtw_widget_background      = 'transparent';  /* background style of whole widget */
+	var jtw_widget_border          = 'size: 1px; color: #000; style: solid';  /* border style of whole widget */
+	var jtw_center_widget          = '';  /* center widget horizontally in container if 'yes' */
+	
+	/* tweet styling */
+	var jtw_tweet_textcolor        = '#ffffff';  /* text color of the tweets */
+	var jtw_tweet_linkcolor        = 'rgb(242, 200, 0)';  /* link color of the tweets */
+	var jtw_tweet_background       = 'transparent';  /* background style of the tweets */
+	var jtw_tweet_newbackground    = '#222222';  /* background style of new tweets */
+	var jtw_tweet_border           = 'border: 0 0 1px 0';  /* border style of the tweets */
+	var jtw_tweet_margin           = '0';  /* marin in px for each tweet */
+	var jtw_tweet_fontsize         = '';  /* fontsize in px or em of each tweet */
+	var jtw_big_img                = 'yes';  /* display big avatar instead of small avatar */
+	var jtw_hide_img               = '';  /* do not display twitter avatar if 'yes' */
+
+	/* display config */
+	var jtw_pre_html               = '';
+	var jtw_post_html              = '';  /* html code to display at the bottom of widget */
+	var jtw_mid_html               = '<hr width="85%" height="2px" />';  /* html code to display inbetween each tweet */
+	var jtw_widget_style_misc      = 'background: #1c4d6b /*url(images/tweet-bg.png) repeat-y top center*/';  /* misc css style for the widget */
+	var jtw_results_style_misc     = '';  /* misc css style for the results */
+	var jtw_tweet_style_misc       = 'font-family: sans-serif;';  /* misc css style for each tweet */
+	var jtw_num_tweets             = '';  /* number of tweets to display in widget (up to 100) */
+	var jtw_tweet_lang             = '';  /* language of tweets to display (2 letter country code) */
+	var jtw_widget_refresh_interval= '';  /* the frequency (in seconds) to look for new tweets*/
+
+	
+</script>
+<script src="/widget.js" type="text/javascript"></script>
+
+
+
+<script language="javascript">
+	/* widget config */
+	var jtw_divname                = 'cardinals';  /* unique id of the widget */
+	var jtw_search                 = 'cardinals OR wissenhunt OR whisenhunt OR anquan OR boldin OR Edgerrin OR "larry fitzgerald" OR superbowl';  /* keywords or phrase to send to search.twitter.com and display */
+	var jtw_width                  = '33%';  /* width of widget in px, %, or auto */
+	var jtw_height                 = '480px';  /* height of widget in px, %, or auto */      
+	var jtw_scroll                 = '';  /* add scroll bar to widget, 'yes' or 'no' */
+	var jtw_widget_background      = '';  /* background style of whole widget */
+	var jtw_widget_border          = 'border: 1px solid #000';  /* border style of whole widget */
+	var jtw_center_widget          = '';  /* center widget horizontally in container if 'yes' */
+	
+	/* tweet styling */
+	var jtw_tweet_textcolor        = '#ffffff';  /* text color of the tweets */
+	var jtw_tweet_linkcolor        = 'rgb(135, 6, 25)';  /* link color of the tweets */
+	var jtw_tweet_background       = 'transparent';  /* background style of the tweets */
+	var jtw_tweet_newbackground    = '#222222';  /* background style of new tweets */
+	var jtw_tweet_border           = '0';  /* border style of the tweets */
+	var jtw_tweet_margin           = '';  /* marin in px for each tweet */
+	var jtw_tweet_fontsize         = '';  /* fontsize in px or em of each tweet */
+	var jtw_big_img                = 'yes';  /* display big avatar instead of small avatar */
+	var jtw_hide_img               = '';  /* do not display twitter avatar if 'yes' */
+	
+	/* display config */
+	var jtw_pre_html               = '';  /* html code to display at the top of widget */
+	var jtw_post_html              = '';  /* html code to display at the bottom of widget */
+	var jtw_mid_html               = '<hr width="85%" height="2px" />';  /* html code to display inbetween each tweet */
+	var jtw_widget_style_misc      = 'background: #1c4d6b /*url(images/tweet-bg.png) repeat-y top center*/';  /* misc css style for the widget */
+	var jtw_results_style_misc     = '';  /* misc css style for the results */
+	var jtw_tweet_style_misc       = 'font-family: sans-serif; /*border-width: 0 0 1px 0; border-style: solid; border-color: #000*/';  /* misc css style for each tweet */
+	var jtw_num_tweets             = '';  /* number of tweets to display in widget (up to 100) */
+	var jtw_tweet_lang             = '';  /* language of tweets to display (2 letter country code) */
+	var jtw_widget_refresh_interval= '';  /* the frequency (in seconds) to look for new tweets*/
+
+	
+</script>
+<script src="/widget.js" type="text/javascript"></script>
+
+
+<div style="color: #fff; float: center; margin-left: auto; margin-right: auto; text-align: center; width: 300px">
+
+<div id="widget">
+	<object type="application/x-shockwave-flash" data="http://widgets.clearspring.com/o/47606bd521007408/497960eddddba1ac/47606bd521007408/ee3f4ce7/-cpid/f1d7d55e939d5b88" id="W47606bd521007408497960eddddba1ac" width="300" height="250"><param name="movie" value="http://widgets.clearspring.com/o/47606bd521007408/497960eddddba1ac/47606bd521007408/ee3f4ce7/-cpid/f1d7d55e939d5b88" /><param name="wmode" value="transparent" /><param name="allowNetworking" value="all" /><param name="allowScriptAccess" value="always" /></object>
+</div>
+
+<table border="1">
+  <tr><td>username:</td></tr>
+  <tr><td><input type="text"></input></td></tr>
+  <tr><td>password:</td></tr>
+  <tr><td><input type="text"></input></td></tr>
+  <tr><td>message:</td></tr>
+  <tr><td><textarea></textarea></td></tr>
+</table>
+
+<br />
+
+<div align="center" style="margin: 0.4em;">
+<!-- AddThis Button BEGIN -->
+<script type="text/javascript">var addthis_pub="twitterbowl";</script>
+<a href="http://www.addthis.com/bookmark.php" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="http://s7.addthis.com/static/btn/lg-share-en.gif" width="125" height="16" border="0" alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/152/addthis_widget.js"></script>
+<!-- AddThis Button END -->
+<br /><script type="text/javascript" src="http://www.reddit.com/button.js?t=2"></script>
+</div>
+</div>
+
+<br style="clear: both;" />
+<br style="clear: both;" />
+<!-- Begin: AdBrite, Generated: 2009-01-27 3:19:49  -->
+<script type="text/javascript">
+    var AdBrite_Title_Color = '1c4d6b';
+    var AdBrite_Text_Color = '1c4d6b';
+    var AdBrite_Background_Color = 'FFFFFF';
+    var AdBrite_Border_Color = 'FFFFFF';
+    var AdBrite_URL_Color = '1c4d6b';
+    try{var AdBrite_Iframe=window.top!=window.self?2:1;var AdBrite_Referrer=document.referrer==''?document.location:document.referrer;AdBrite_Referrer=encodeURIComponent(AdBrite_Referrer);}catch(e){var AdBrite_Iframe='';var AdBrite_Referrer='';}
+</script>
+<div style="margin-top: 30 px; white-space:nowrap; margin-left: auto; margin-right: auto; width:100%; align: center; text-align: center;"><script type="text/javascript">document.write(String.fromCharCode(60,83,67,82,73,80,84));document.write(' src="http://ads.adbrite.com/mb/text_group.php?sid=1015664&zs=3436385f3630&ifr='+AdBrite_Iframe+'&ref='+AdBrite_Referrer+'" type="text/javascript">');document.write(String.fromCharCode(60,47,83,67,82,73,80,84,62));</script>
+    <a target="_top" href="http://www.adbrite.com/mb/commerce/purchase_form.php?opid=1015664&afsid=1"><img src="http://files.adbrite.com/mb/images/adbrite-your-ad-here-banner.gif" style="background-color:#FFFFFF;border:none;padding:0;margin:0;" alt="Your Ad Here" width="11" height="60" border="0" /></a></div>
+<!-- End: AdBrite -->
+
+</div>
+
+
+<!-- GOOGLE ANALYTICS -->
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-4223484-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+<!-- FOOTER -->
+
+<p class="footer" align="center"><a href="/about.html">about</a> | <a href="/terms.html">terms of use</a> | <a href="/privacy.html">privacy policy</a></p>
+
+<p class="footer" align="center">created by <a href="http://twitter.com/derwiki">@derwiki</a> and <a href="http://twitter.com/abossy">@abossy</a> &copy; 2009. All rights reserved.</p>
+
+</body>
+</html>
